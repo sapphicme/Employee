@@ -8,37 +8,37 @@ namespace Assignment2_PROG2
 {
     class Employee
     {
-        static void Main(string[] args)
+        //fields
+        private int employeeID;
+
+        //properties
+        public int EmployeeID
         {
-
-
+            get { return employeeID; }
         }
 
-        readonly public int EmployeeId;
-        public string FirstName;
-        public string LastName;
-        public double BaseSalary = 1000.00;
-        public double GrossSales;
-        public double ComissionRate = 0.1;
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public double BaseSalary { get; set; }
+        public double GrossSales { get; set; }
+        public double CommissionRate { get; set; }
 
-
-        public void Earnings(double comissionCalc)
+        //methods
+        public double Earnings()
         {
-            comissionCalc = ComissionRate * GrossSales + BaseSalary;
-            return;
+            double earnings = this.CommissionRate * this.GrossSales + this.BaseSalary;
+            return earnings;
         }
 
-        public void Employee()
+        //constructors
+        public Employee()
         {
-            
+            this.BaseSalary = 1000;
+            this.CommissionRate = 0.1;
         }
 
         public Employee(int employeeID, string firstName, double baseSalary)
         {
-            EmployeeId = employeeID;
-            FirstName = firstName;
-            BaseSalary = baseSalary;
-
         }
     }
 }
