@@ -31,11 +31,10 @@ namespace Assignment2_PROG2
                 grossSales = Convert.ToDouble(Console.ReadLine());
             }
 
-            Console.Write("Enter Commission Rate: ");
+            Console.Write("Enter Commission Rate (%): ");
             commissionRate = Convert.ToDouble(Console.ReadLine());
 
             //checks if commissionRate is within acceptable values
-
             while (commissionRate < 0.1 || commissionRate > 1.0)
             {
                 Console.WriteLine("Commission rate should be between 0.1% and 1.0%");
@@ -43,9 +42,12 @@ namespace Assignment2_PROG2
                 commissionRate = Convert.ToDouble(Console.ReadLine());
             }
 
-            Employee staff = new Employee(1, firstName, baseSalary);
+            Employee staff = new Employee(0, firstName, baseSalary);
             //calculates and displays earnings for staff in currency format
+            staff.GrossSales = grossSales;
+            staff.CommissionRate = commissionRate;
             Console.WriteLine("Earnings of {0} {1} come out to {2:c2}", staff.FirstName, staff.LastName, staff.Earnings());
+            Console.ReadKey();
         }
     }
 }

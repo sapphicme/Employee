@@ -39,6 +39,9 @@ namespace Assignment2_PROG2
 
         public Employee(int employeeID, string firstName, double baseSalary)
         {
+            this.employeeID = employeeID;
+            this.FirstName = firstName;
+            this.BaseSalary = baseSalary;
         }
     }
 }
